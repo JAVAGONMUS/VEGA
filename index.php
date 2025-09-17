@@ -59,6 +59,9 @@ if ($archivo_actual == basename($_SERVER["SCRIPT_FILENAME"]) && $archivo_actual 
         height: auto;
         display: block;
         margin: 0 auto; /* centra la imagen */
+		background-size: cover;
+		-webkit-user-select: none;
+		user-select: none;
     }
     </style>
 
@@ -70,9 +73,20 @@ if ($archivo_actual == basename($_SERVER["SCRIPT_FILENAME"]) && $archivo_actual 
             $('body').addClass('loaded');
         });
     </script>
-    
+
+	<script>
+	  document.addEventListener('contextmenu', e => e.preventDefault());
+	  document.addEventListener('keydown', e => {
+		// bloquear Ctrl+S, Ctrl+U, Ctrl+Shift+I, F12
+		if ((e.ctrlKey && (e.key === 's' || e.key === 'u')) ||
+			(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i') ||
+			e.key === 'F12') e.preventDefault();
+	  });
+	</script>
+		
 </body>
 </html>
+
 
 
 

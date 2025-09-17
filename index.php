@@ -29,7 +29,7 @@ if ($archivo_actual == basename($_SERVER["SCRIPT_FILENAME"]) && $archivo_actual 
 
     </div>
 
-    
+
    
     <nav>
         <div class="container-fluid">
@@ -47,8 +47,13 @@ if ($archivo_actual == basename($_SERVER["SCRIPT_FILENAME"]) && $archivo_actual 
         </div>
     </nav>
 
-    <embed src="CV JAZMIN DE LA VEGA VIVAV2.pdf" type="application/pdf" width="100%" height="1200px" />
-
+    <object data="CV JAZMIN DE LA VEGA VIVAV2.pdf" type="application/pdf" width="100%" height="600">
+        <p>Tu navegador no soporta PDF embebidos. 
+        <a href="archivo.pdf">Descárgalo aquí</a>.</p>
+    </object>
+    <?php
+        echo '<embed src="CV JAZMIN DE LA VEGA VIVAV2.pdf" type="application/pdf" width="100%" height="600px">';
+    ?>
 
     <script src="plugins.js"></script>
     <script>

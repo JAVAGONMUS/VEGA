@@ -15,7 +15,7 @@ if ($archivo_actual == basename($_SERVER["SCRIPT_FILENAME"]) && $archivo_actual 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="robots" content="index">
     <title>JAZMIN VEGA</title>
-    <script src="js/codexone.js"></script>
+    <script src="codexone.js"></script>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="templatemo-style.css">
 </head>
@@ -73,5 +73,6 @@ if ($archivo_actual == basename($_SERVER["SCRIPT_FILENAME"]) && $archivo_actual 
     
 </body>
 </html>
+
 
 

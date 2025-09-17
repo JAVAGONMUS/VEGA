@@ -14,7 +14,7 @@ if ($archivo_actual == basename($_SERVER["SCRIPT_FILENAME"]) && $archivo_actual 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="robots" content="index">
-    <title>JAZMIN</title>
+    <title>JAZMIN VEGA</title>
     <script src="js/codexone.js"></script>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="templatemo-style.css">
@@ -47,11 +47,7 @@ if ($archivo_actual == basename($_SERVER["SCRIPT_FILENAME"]) && $archivo_actual 
         </div>
     </nav>
 
-    <object data="CV JAZMIN DE LA VEGA VIVAV2.pdf" type="application/pdf" width="100%" height="600">
-        <p>Tu navegador no soporta PDF embebidos. 
-        <a href="archivo.pdf">Descárgalo aquí</a>.</p>
-    </object>
-    
+      
 
 	<img src="cv1.jpg" alt="Ejemplo" class="ajuste">
     <img src="cv2.jpg" alt="Ejemplo" class="ajuste">
@@ -77,4 +73,5 @@ if ($archivo_actual == basename($_SERVER["SCRIPT_FILENAME"]) && $archivo_actual 
     
 </body>
 </html>
+
 

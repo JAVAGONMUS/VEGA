@@ -9,47 +9,6 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    document.getElementById("btnWhatsApp").addEventListener("click", function() {
-        // Número de WhatsApp en formato internacional
-        let telefono = "50251872106"; // cambia por el de tu empresa
-        let mensaje = "Hola GUATE MOSS S.A. quiero más información sobre sus productos.";
-
-        // Crear URL universal de WhatsApp
-        let url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
-
-        // Abrir en otra pestaña
-        window.open(url, "_blank");
-    });
-
-
-
-    console.log("codexone fullscreen listo ✅");
-    // ---- Utilidades Fullscreen ----
-    function requestFS(el) {
-        const fn = el.requestFullscreen || el.webkitRequestFullscreen || el.msRequestFullscreen;
-        if (fn) return fn.call(el);
-        return Promise.reject(new Error("Fullscreen API no disponible"));
-    }
-
-    // ---- Click para IMG y VIDEO (evento delegado, sirve para contenido dinámico) ----
-    document.addEventListener(
-        "click",
-        function (e) {
-        const target = e.target;
-        if (!target) return;
-
-        // Si clican una IMG o un VIDEO → fullscreen al elemento
-        if (target.matches("img, video")) {
-            target.style.cursor = "zoom-in";
-            requestFS(target).catch(() => {
-            // Si algún navegador viejito falla, no hacemos nada extra aquí.
-            // (Opcional: podrías abrir un "lightbox" como fallback)
-            });
-        }
-        },
-        { passive: true }
-    );
-
     // ---- IFRAmes (YouTube/Vimeo): botón overlay ⛶ para pedir fullscreen ----
     // Por diseño del navegador, el "click" dentro del iframe NO llega a tu JS,
     // así que creamos un botón encima.
@@ -131,26 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     mo.observe(document.documentElement, { childList: true, subtree: true });
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
     // =============================================
     // VALIDACIÓN DE FORMULARIOS
     // =============================================
@@ -158,11 +98,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (searchForm) {
         searchForm.addEventListener('submit', function(e) {
             const marca = document.getElementById('marca').value.trim();
-            const articulo = document.getElementById('articulo').value.trim();
+            const talla = document.getElementById('talla').value.trim();
             
-            if (!marca && !articulo) {
+            if (!marca && !talla) {
                 e.preventDefault();
-                alert('Ingresa un criterio de búsqueda (producto o marca)');
+                alert('Por favor ingresa al menos un criterio de búsqueda (marca o talla)');
             }
         });
     }
@@ -189,7 +129,15 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
     });
 
-    
+    document.addEventListener('keydown', function(e) {
+        // Deshabilitar F12, Ctrl+Shift+I, Ctrl+Shift+C, Ctrl+U
+        if (e.key === 'F12' || 
+            (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+            (e.ctrlKey && e.shiftKey && e.key === 'C') || 
+            (e.ctrlKey && e.key === 'U')) {
+            e.preventDefault();
+        }
+    });
 
     // Ajustar elementos según tamaño de pantalla
     function adjustForScreenSize() {
@@ -217,7 +165,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 messageDiv.remove();
             }, 5000);
         }
-    }
+    }    
+
 
     // =============================================
     // INICIALIZACIÓN

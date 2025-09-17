@@ -51,9 +51,22 @@ if ($archivo_actual == basename($_SERVER["SCRIPT_FILENAME"]) && $archivo_actual 
         <p>Tu navegador no soporta PDF embebidos. 
         <a href="archivo.pdf">Descárgalo aquí</a>.</p>
     </object>
-    <?php
-        echo '<embed src="CV JAZMIN DE LA VEGA VIVAV2.pdf" type="application/pdf" width="100%" height="600px">';
-    ?>
+    
+
+	<img src="cv1.jpg" alt="Ejemplo" class="ajuste">
+    <img src="cv2.jpg" alt="Ejemplo" class="ajuste">
+    <img src="cv3.jpg" alt="Ejemplo" class="ajuste">
+
+    <style>
+    .ajuste {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto; /* centra la imagen */
+    }
+    </style>
+
+	
 
     <script src="plugins.js"></script>
     <script>
@@ -64,3 +77,4 @@ if ($archivo_actual == basename($_SERVER["SCRIPT_FILENAME"]) && $archivo_actual 
     
 </body>
 </html>
+
